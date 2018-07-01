@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="VicAAriousRunner">
+
+  <!--<listeners>-->
+    <!--<listener class-name="reports.VicaariousListener"/>-->
+  <!--</listeners>-->
+
+  <parameter name="testingURL" value="https://qasilo32-sjc.aa.com"/>
+
+  <test name="AAU Parallel Tests" parallel="methods" thread-count="4">
+    <classes >
+      <class name="com.oceana.testing.VerifyActionsOnHomePage"/>
+    </classes>
+  </test>
+</suite>
+
