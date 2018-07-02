@@ -2,6 +2,7 @@ package com.oceana.base;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import com.oceana.managers.ObjectManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -16,7 +17,7 @@ public class DriverBase {
   @DataProvider
   public Object[][] dataAccess(){
     return new Object[][]{
-        new Object[]{ }
+        new Object[]{ new ObjectManager() }
     };
   }
 
