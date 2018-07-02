@@ -3,6 +3,7 @@ package com.oceana.base;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import com.oceana.managers.ObjectManager;
+import com.oceana.parallel.ParallelDrivers;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -10,9 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 
-public class DriverBase {
-
-  private String url;
+public class DriverBase extends ParallelDrivers {
 
   @DataProvider
   public Object[][] dataAccess(){
@@ -21,17 +20,12 @@ public class DriverBase {
     };
   }
 
-  @BeforeClass
-  public void getXMLfileParameter(ITestContext ctx){
-    url = ctx.getCurrentXmlTest().getParameter("testingURL");
-  }
-
-  @BeforeMethod
-  public void setup(){
-    System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver");
-    WebDriverRunner.setWebDriver(new ChromeDriver());
-    Selenide.open(url);
-  }
+//  @BeforeMethod
+//  public void setup(){
+//    System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver");
+//    WebDriverRunner.setWebDriver(new ChromeDriver());
+//    Selenide.open(url);
+//  }
 
   @AfterMethod
   public void tearDown(){
