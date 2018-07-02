@@ -5,7 +5,7 @@
     <!--<listener class-name=""/>-->
   <!--</listeners>-->
 
-  <parameter name="testingURL" value="https://qasilo32-sjc.aa.com"/>
+  <parameter name="testingURL" value=""/>
 
   <test name="AA Parallel Tests" parallel="methods" thread-count="2">
     <classes >
