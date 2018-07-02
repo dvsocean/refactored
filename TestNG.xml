@@ -2,12 +2,12 @@
 <suite name="VicAAriousRunner">
 
   <!--<listeners>-->
-    <!--<listener class-name="reports.VicaariousListener"/>-->
+    <!--<listener class-name=""/>-->
   <!--</listeners>-->
 
   <parameter name="testingURL" value="https://qasilo32-sjc.aa.com"/>
 
-  <test name="AAU Parallel Tests" parallel="methods" thread-count="4">
+  <test name="AA Parallel Tests" parallel="methods" thread-count="2">
     <classes >
       <class name="com.oceana.testing.VerifyActionsOnHomePage"/>
     </classes>
