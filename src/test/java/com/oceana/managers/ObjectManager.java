@@ -24,7 +24,7 @@ public class ObjectManager {
     caps.setCapability("platform", "macOS 10.13");
     caps.setCapability("version", "66.0");
     caps.setCapability("name", method.getName());
-    WebDriverRunner.setWebDriver(new RemoteWebDriver(new URL("http://ChangeDomain:8c8d82a8-4ebb-46c9-bb26-e1a1fd8f816b@ondemand.saucelabs.com:80/wd/hub"), caps));
+    WebDriverRunner.setWebDriver(new RemoteWebDriver(new URL(""), caps));
 
     Configuration.browser = "chrome";
     Configuration.timeout = 10000;
@@ -38,7 +38,7 @@ public class ObjectManager {
     caps.setCapability("platform", "macOS 10.13");
     caps.setCapability("version", "59.0");
     caps.setCapability("name", method.getName());
-    WebDriverRunner.setWebDriver(new RemoteWebDriver(new URL("http://ChangeDomain:8c8d82a8-4ebb-46c9-bb26-e1a1fd8f816b@ondemand.saucelabs.com:80/wd/hub"), caps));
+    WebDriverRunner.setWebDriver(new RemoteWebDriver(new URL(""), caps));
 
     Configuration.browser = "chrome";
     Configuration.timeout = 10000;
