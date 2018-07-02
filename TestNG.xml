@@ -5,7 +5,7 @@
     <!--<listener class-name="reports.VicaariousListener"/>-->
   <!--</listeners>-->
 
-  <parameter name="testingURL" value="https://qasilo32-sjc.aa.com"/>
+  <parameter name="testingURL" value=""/>
 
   <test name="AAU Parallel Tests" parallel="methods" thread-count="4">
     <classes >
