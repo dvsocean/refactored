@@ -10,7 +10,7 @@ public class ObjectManager {
     homePage = new HomePage();
   }
 
-  public HomePage onTheHomePage(){
+  public HomePage onTheDesktopHomePage(){
     return homePage;
   }
 }
