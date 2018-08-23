@@ -13,13 +13,13 @@ public class HomePage extends DesktopElements implements HomePageActions {
   @Override
   public HomePage login(Object user) {
     if(user.getClass().getSimpleName().equals("Mary")){
-      DESKTOP_AADVN_INPUT.setValue(mary.get_id());
-      DESKTOP_LASTNAME_INPUT.setValue(mary.getName());
-      DESKTOP_PASSWORD_INPUT.setValue(mary.getPassword()).pressEnter();
+      DESKTOP_ID.setValue(mary.get_id());
+      DESKTOP_LASTNAME.setValue(mary.getName());
+      DESKTOP_PASSWORD.setValue(mary.getPassword()).pressEnter();
     } else if(user.getClass().getSimpleName().equals("Jane")) {
-      DESKTOP_AADVN_INPUT.setValue(jane.get_id());
-      DESKTOP_LASTNAME_INPUT.setValue(jane.getName());
-      DESKTOP_PASSWORD_INPUT.setValue(jane.getPassword()).pressEnter();
+      DESKTOP_ID.setValue(jane.get_id());
+      DESKTOP_LASTNAME.setValue(jane.getName());
+      DESKTOP_PASSWORD.setValue(jane.getPassword()).pressEnter();
     } else {
       System.out.println("Invalid user applied, cannot proceed!");
     }
