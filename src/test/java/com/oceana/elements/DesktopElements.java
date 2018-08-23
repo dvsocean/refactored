@@ -12,7 +12,7 @@ public class DesktopElements {
   protected SelenideElement DESKTOP_PASSWORD_INPUT = $(By.id("loginForm.password"));
 
   //google page
-  protected SelenideElement SEARCH_BAR = $(By.id("lst-i"));
+  protected SelenideElement SEARCH_BAR = $(By.id("lst-ib"));
 
 
 
