@@ -1,17 +1,17 @@
 package com.oceana.users;
 
-public class MaryCiccone extends User {
+public class Mary extends User {
 
-  private String aadvn_number = "";
+  private String id = "";
   private String last_name = "";
   private String first_name = "";
   private String password = "";
 
-  public String getAadvn_number() {
-    return aadvn_number;
+  public String get_id() {
+    return id;
   }
 
-  public String getLast_name() {
+  public String getName() {
     return last_name;
   }
 

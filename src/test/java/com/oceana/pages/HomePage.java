@@ -2,27 +2,31 @@ package com.oceana.pages;
 
 import com.oceana.elements.DesktopElements;
 import com.oceana.interfaces.HomePageActions;
-import com.oceana.users.MaryCiccone;
-import com.oceana.users.MaryPoints;
+import com.oceana.users.Mary;
+import com.oceana.users.Jane;
 
 public class HomePage extends DesktopElements implements HomePageActions {
 
-  private MaryCiccone maryC = new MaryCiccone();
-  private MaryPoints maryP = new MaryPoints();
+  private Mary mary = new Mary();
+  private Jane jane = new Jane();
 
   @Override
   public HomePage login(Object user) {
-    if(user.getClass().getSimpleName().equals("MaryCiccone")){
-      DESKTOP_AADVN_INPUT.setValue(maryC.getAadvn_number());
-      DESKTOP_LASTNAME_INPUT.setValue(maryC.getLast_name());
-      DESKTOP_PASSWORD_INPUT.setValue(maryC.getPassword()).pressEnter();
-    } else if(user.getClass().getSimpleName().equals("MaryPoints")) {
-      DESKTOP_AADVN_INPUT.setValue(maryP.getAadvn_number());
-      DESKTOP_LASTNAME_INPUT.setValue(maryP.getLast_name());
-      DESKTOP_PASSWORD_INPUT.setValue(maryP.getPassword()).pressEnter();
+    if(user.getClass().getSimpleName().equals("Mary")){
+      DESKTOP_AADVN_INPUT.setValue(mary.get_id());
+      DESKTOP_LASTNAME_INPUT.setValue(mary.getName());
+      DESKTOP_PASSWORD_INPUT.setValue(mary.getPassword()).pressEnter();
+    } else if(user.getClass().getSimpleName().equals("Jane")) {
+      DESKTOP_AADVN_INPUT.setValue(jane.get_id());
+      DESKTOP_LASTNAME_INPUT.setValue(jane.getName());
+      DESKTOP_PASSWORD_INPUT.setValue(jane.getPassword()).pressEnter();
     } else {
       System.out.println("Invalid user applied, cannot proceed!");
     }
     return this;
+  }
+
+  public void sendValueToSearchBar(String value){
+    SEARCH_BAR.setValue(value).pressEnter();
   }
 }

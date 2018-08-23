@@ -1,13 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="VicAAriousRunner">
 
-  <!--<listeners>-->
-    <!--<listener class-name=""/>-->
-  <!--</listeners>-->
+  <listeners>
+    <listener class-name="com.oceana.reports.TestListener"/>
+  </listeners>
 
-  <parameter name="testingURL" value=""/>
+  <parameter name="testingURL" value="https://www.google.com"/>
 
-  <test name="AA Parallel Tests" parallel="methods" thread-count="2">
+  <test name="Testing testing 123" parallel="methods" thread-count="2">
     <classes >
       <class name="com.oceana.testing.VerifyActionsOnHomePage"/>
     </classes>

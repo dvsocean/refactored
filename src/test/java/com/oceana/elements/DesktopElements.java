@@ -11,6 +11,9 @@ public class DesktopElements {
   protected SelenideElement DESKTOP_LASTNAME_INPUT = $(By.id("loginForm.lastName"));
   protected SelenideElement DESKTOP_PASSWORD_INPUT = $(By.id("loginForm.password"));
 
+  //google page
+  protected SelenideElement SEARCH_BAR = $(By.id("lst-i"));
+
 
 
 }
