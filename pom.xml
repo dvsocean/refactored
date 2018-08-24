@@ -24,7 +24,30 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<!--<pluginRepositories>-->
+		<!--<pluginRepository>-->
+			<!--<id>myRepo1</id>-->
+			<!--<name>testRepo1</name>-->
+			<!--<url>http://path/to/repo</url>-->
+		<!--</pluginRepository>-->
+	<!--</pluginRepositories>-->
+	<!--<repositories>-->
+		<!--<repository>-->
+			<!--<id>myRepo2</id>-->
+			<!--<name>testRepo2</name>-->
+			<!--<url>http://path/to/repo</url>-->
+		<!--</repository>-->
+	<!--</repositories>-->
+
 	<dependencies>
+
+		<!-- dependency that pulls from the plug in repository/pluginRepository -->
+		<!--<dependency>-->
+			<!--<groupId>com.group.name</groupId>-->
+			<!--<artifactId>artifact-name</artifactId>-->
+			<!--<version>0.00</version>-->
+		<!--</dependency>-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -62,6 +85,13 @@
 			<version>2.41.2</version>
 		</dependency>
 
+		<!-- Android & IOS drivers for appium/saucelabs -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>6.0.0-BETA5</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
