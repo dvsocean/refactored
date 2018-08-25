@@ -1,9 +1,7 @@
 package com.oceana.reports;
 
-import com.codeborne.selenide.WebDriverRunner;
 import com.oceana.base.InitDriverBase;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -32,7 +30,11 @@ public class TestListener implements ITestListener{
     System.out.println("Method: " +  getTestMethodName(result) + "() SUCCESS!\n");
     ReportTestManager.getTest().log(LogStatus.PASS, result.getMethod().getMethodName() + " > PASSED!", "Testing URL: " + getTestingUrl(result));
 
-    ((JavascriptExecutor) WebDriverRunner.getWebDriver()).executeScript("sauce:job-result=passed");
+    /*
+      Use the js executor when running in sauce labs. I found it can throw an error during local execution
+      and I think its cause, the command executed doesn't exist on that particular page.
+     */
+    //((JavascriptExecutor) WebDriverRunner.getWebDriver()).executeScript("sauce:job-result=passed");
   }
 
   @Override
@@ -49,8 +51,11 @@ public class TestListener implements ITestListener{
     //log and screenshot operations for failed tests.
     ReportTestManager.getTest().log(LogStatus.FAIL,result.getMethod().getMethodName() + " > FAILED!",
         ReportTestManager.getTest().addBase64ScreenShot(base64Screenshot));
-
-    ((JavascriptExecutor) WebDriverRunner.getWebDriver()).executeScript("sauce:job-result=failed");
+    /*
+      Use the js executor when running in sauce labs. I found it can throw an error during local execution
+      and I think its cause, the command executed doesn't exist on that particular page.
+     */
+    //((JavascriptExecutor) WebDriverRunner.getWebDriver()).executeScript("sauce:job-result=failed");
   }
 
   @Override
