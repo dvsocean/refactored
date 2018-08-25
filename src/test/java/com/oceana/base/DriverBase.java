@@ -35,10 +35,10 @@ public class DriverBase extends InitDriverBase {
 
   @AfterMethod
   public void tearDown(ITestResult result){
-    String os = System.getProperty("os.name").toLowerCase();
-    if (os.contains("linux")) {
-      ((JavascriptExecutor) WebDriverRunner.getWebDriver()).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
-    }
+//    String os = System.getProperty("os.name").toLowerCase();
+//    if (os.contains("linux")) {
+//      ((JavascriptExecutor) WebDriverRunner.getWebDriver()).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
+//    }
     Selenide.close();
   }
 }

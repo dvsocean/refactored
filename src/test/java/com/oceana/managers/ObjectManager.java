@@ -81,7 +81,7 @@ public class ObjectManager {
     caps.setCapability("platformVersion", "10.3");
     caps.setCapability("platformName", "iOS");
     caps.setCapability("browserName", "Safari");
-    caps.setCapability("app", "sauce-storage:myIOSapp.app");
+    //caps.setCapability("app", "sauce-storage:myIOSapp.app");
     IOSDriver driver = new IOSDriver<>(new URL("http://AccountName:468r345w2-h765-32y3-n4f4-324356q3456t@ondemand.saucelabs.com:443/wd/hub"), caps);
     WebDriverRunner.setWebDriver(driver);
   }

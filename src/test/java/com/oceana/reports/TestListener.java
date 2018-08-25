@@ -1,7 +1,9 @@
 package com.oceana.reports;
 
+import com.codeborne.selenide.WebDriverRunner;
 import com.oceana.base.InitDriverBase;
 import com.relevantcodes.extentreports.LogStatus;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +31,8 @@ public class TestListener implements ITestListener{
   public void onTestSuccess(ITestResult result) {
     System.out.println("Method: " +  getTestMethodName(result) + "() SUCCESS!\n");
     ReportTestManager.getTest().log(LogStatus.PASS, result.getMethod().getMethodName() + " > PASSED!", "Testing URL: " + getTestingUrl(result));
+
+    ((JavascriptExecutor) WebDriverRunner.getWebDriver()).executeScript("sauce:job-result=passed");
   }
 
   @Override
@@ -40,11 +44,13 @@ public class TestListener implements ITestListener{
     WebDriver webDriver = ((InitDriverBase) testClass).getDriver();
 
     //Take screenshot
-    String base64Screenshot = "data:image/png;base64,"+((TakesScreenshot)webDriver).getScreenshotAs(OutputType.BASE64);
+    String base64Screenshot = "data:image/png;base64," + ((TakesScreenshot)webDriver).getScreenshotAs(OutputType.BASE64);
 
     //log and screenshot operations for failed tests.
     ReportTestManager.getTest().log(LogStatus.FAIL,result.getMethod().getMethodName() + " > FAILED!",
         ReportTestManager.getTest().addBase64ScreenShot(base64Screenshot));
+
+    ((JavascriptExecutor) WebDriverRunner.getWebDriver()).executeScript("sauce:job-result=failed");
   }
 
   @Override
