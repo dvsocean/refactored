@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 public class VerifyActionsOnHomePage extends DriverBase {
 
   @Test(dataProvider = "dataAccess")
-  public void performSimpleLoginOnChrome(User user) {
-    user.onTheDesktopHomePage().sendValueToSearchBar("motorcycles");
+  public void performSimpleLoginOnChrome(User user) throws InterruptedException {
+    user.onTheDesktopHomePage().login(username, password).collectLinks();
   }
 
 

@@ -12,7 +12,11 @@ public class DesktopElements {
   protected SelenideElement DESKTOP_PASSWORD = $(By.id("password"));
 
   //google page
-  protected SelenideElement SEARCH_BAR = $(By.id("lst-ib"));
+  protected SelenideElement SEARCH_BAR = $(By.name("q"));
+
+  //AAU LOGIN
+  protected SelenideElement USERNAME = $(By.id("user_login"));
+  protected SelenideElement PASSWORD = $(By.id("user_pass"));
 
 
 

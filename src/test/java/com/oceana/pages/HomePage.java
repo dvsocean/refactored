@@ -1,9 +1,17 @@
 package com.oceana.pages;
 
+import com.codeborne.selenide.SelenideElement;
 import com.oceana.elements.DesktopElements;
 import com.oceana.interfaces.HomePageActions;
 import com.oceana.users.Mary;
 import com.oceana.users.Jane;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class HomePage extends DesktopElements implements HomePageActions {
 
@@ -28,5 +36,18 @@ public class HomePage extends DesktopElements implements HomePageActions {
 
   public void sendValueToSearchBar(String value){
     SEARCH_BAR.setValue(value).pressEnter();
+  }
+
+  public HomePage login(String username, String password) {
+    USERNAME.setValue(username);
+    PASSWORD.setValue(password).pressEnter();
+    return this;
+  }
+
+  public void collectLinks(){
+    List<SelenideElement> links = $$(By.tagName("a"));
+    for (SelenideElement ele: links){
+      System.out.println("RES --> " + ele.getAttribute("href"));
+    }
   }
 }

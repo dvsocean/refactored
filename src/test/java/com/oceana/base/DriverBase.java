@@ -15,6 +15,9 @@ import org.testng.annotations.DataProvider;
 
 public class DriverBase extends InitDriverBase {
 
+  protected String username;
+  protected String password;
+
   @DataProvider
   public Object[][] dataAccess(){
     return new Object[][]{
@@ -27,6 +30,8 @@ public class DriverBase extends InitDriverBase {
   @BeforeClass
   public void getParameter(ITestContext ctx){
     Configuration.baseUrl = ctx.getCurrentXmlTest().getParameter("testingURL");
+    this.username = ctx.getCurrentXmlTest().getParameter("username");
+    this.password = ctx.getCurrentXmlTest().getParameter("password");
   }
 
   @BeforeMethod

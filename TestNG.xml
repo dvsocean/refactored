@@ -5,9 +5,12 @@
     <listener class-name="com.oceana.reports.TestListener"/>
   </listeners>
 
-  <parameter name="testingURL" value="https://www.google.com"/>
+  <parameter name="testingURL" value="http://13.56.193.233"/>
+  <parameter name="username" value="admin"/>
+  <parameter name="password" value="4ZFjelgkHSpGIivRTf"/>
 
-  <test name="Testing testing 123" parallel="methods" thread-count="2">
+  <!--<test name="Testing testing 123" parallel="methods" thread-count="2">-->
+  <test name="Testing testing 123">
     <classes >
       <class name="com.oceana.testing.VerifyActionsOnHomePage"/>
     </classes>
